@@ -1,0 +1,33 @@
+{
+  "name": "gardeofy-api-server",
+  "version": "1.0.0",
+  "description": "Assignment-11 project API server",
+  "main": "server.js",
+  "author": "mahabubdev",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node seeder.js"
+  },
+  "dependencies": {
+    "cloudinary": "^1.25.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.3",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "myuid": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.22.10",
+    "npm": "6.14.12"
+  }
+}
