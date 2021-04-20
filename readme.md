@@ -6,3 +6,5 @@
     3. User Auth and Buy service
     4. Admin panel with role check
 ```
+
+backend_api_url: https://gardeofy-api-server.herokuapp.com/
