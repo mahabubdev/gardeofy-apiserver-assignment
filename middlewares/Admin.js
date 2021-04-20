@@ -1,7 +1,7 @@
 module.exports = (req, res, next) => {
     let { user } = req;
 
-    if (user.role !== 'admin' || user.role !== 'super_admin') {
+    if (user.role === 'customer') {
         // user not permitted
         return res.status(403).json({
             message: 'Error! Forbidden attempt',

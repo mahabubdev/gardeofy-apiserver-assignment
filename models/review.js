@@ -1,11 +1,11 @@
 const { model, Schema } = require('mongoose');
-const uid = require('myuid');
 
 
 const reviewSchema = new Schema({
     uid: {
         type: String,
-        default: uid() + '-' + uid() + '-' + uid(),
+        unique: true,
+        required: true,
     },
     description: {
         type: String,

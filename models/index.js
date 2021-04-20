@@ -3,5 +3,4 @@ module.exports = {
     ServiceModel: require('./service'),
     ReviewModel: require('./review'),
     OrderModel: require('./order'),
-    StuffModel: require('./stuff')
 };

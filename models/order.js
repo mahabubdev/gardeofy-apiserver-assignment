@@ -1,11 +1,11 @@
 const { model, Schema } = require('mongoose');
-const uid = require('myuid');
 
 
 const orderSchema = new Schema({
     uid: {
         type: String,
-        default: uid() + '-' + uid() + '-' + uid(),
+        unique: true,
+        required: true,
     },
     service: {
         type: Schema.Types.ObjectId,
@@ -13,6 +13,10 @@ const orderSchema = new Schema({
     },
     info: {
         type: Object,
+    },
+    status: {
+        type: String,
+        default: 'pending'
     },
     user: {
         type: Schema.Types.ObjectId,

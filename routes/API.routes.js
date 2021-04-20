@@ -8,6 +8,13 @@ router.use('/auth', require('../controllers/Auth'));
 router.use('/review', require('../controllers/Review'));
 
 
+// orders
+router.use('/order', require('../controllers/Order'));
+
+
+// services
+router.use('/service', require('../controllers/Service'));
+
 
 
 // last route: 404

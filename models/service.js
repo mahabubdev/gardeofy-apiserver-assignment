@@ -1,23 +1,32 @@
 const { model, Schema } = require('mongoose');
-const uid = require('myuid');
 
 
 const serviceSchema = new Schema({
     uid: {
         type: String,
-        default: uid() + '-' + uid() + '-' + uid(),
+        unique: true,
+        required: true,
     },
     name: {
         type: String,
         minLength: 5,
-        maxLength: 32,
-        required: true
+        maxLength: 100,
+        required: true,
+        unique: true,
     },
     description: {
         type: String,
         required: true,
         minLength: 30,
         maxLength: 255,
+    },
+    info: {
+        price: {type: Number, default: 3600},
+        currency: {type: String, default: 'CAD'},
+        validity: {
+            type: String,
+            default: '1y'
+        }
     },
     status: {
         type: Boolean,

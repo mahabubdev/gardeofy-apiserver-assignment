@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { UserModel, ReviewModel } = require('../../models');
 const JWT_CHECK = require('../../middlewares/JWT');
-const { reviewInputs } = require('../../helpers/validations')
+const { reviewInputs } = require('../../helpers/validations');
+const uid = require('myuid');
 
 // ADD NEW FEEDBACK/Review
 router.post('/add', [JWT_CHECK], async (req, res) => {
@@ -33,6 +34,7 @@ router.post('/add', [JWT_CHECK], async (req, res) => {
     const newRev = new ReviewModel({
         description: value.description,
         user: user._id,
+        uid: uid(),
     });
     await newRev.save()
     .then(async (rv) => {
